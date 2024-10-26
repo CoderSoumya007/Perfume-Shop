@@ -4,7 +4,7 @@ export default function ProductCard({ product }) {
         <Link to={`/product/${product.id}`} className="group">
       <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
         <div className="relative">
-          <img src={product.images.main} alt={product.name} className="w-full h-64 object-cover" />
+          <img src={product.thumbnails} alt={product.name} className="w-full h-64 object-cover" />
           <div className="absolute inset-0 bg-black bg-opacity-25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <span className="text-white text-lg font-semibold">View Details</span>
           </div>
