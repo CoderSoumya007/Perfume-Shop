@@ -20,11 +20,11 @@ export default function ProductPage() {
     useEffect(() => {
         const fetchProductAndReviews = async () => {
             try {
-                const productRes = await axios.get(`http://localhost:5000/api/products/${id}`);
+                const productRes = await axios.get(`https://perfume-shop-server.vercel.app/api/products/${id}`);
                 setProduct(productRes.data.data);
                 setMainImage(productRes.data.data.images.main);
                 setSelectedSize(productRes.data.data.sizes[0]);
-                const reviewsRes = await axios.get(`http://localhost:5000/api/reviews/${id}`);
+                const reviewsRes = await axios.get(`https://perfume-shop-server.vercel.app/api/reviews/${id}`);
                 setReviews(reviewsRes.data.data[0].reviews);
             } catch (error) {
                 console.error('Error fetching product or reviews:', error);
@@ -40,7 +40,7 @@ export default function ProductPage() {
                 productId: id,
                 reviews: [newReview]
             };
-            const res = await axios.post(`http://localhost:5000/api/reviews/${id}`, reviewData);
+            const res = await axios.post(`https://perfume-shop-server.vercel.app/api/reviews/${id}`, reviewData);
             setReviews([...reviews, ...res.data.data.reviews]);
             setNewReview({
                 rating: 5,

@@ -13,7 +13,7 @@ export default function HomePage() {
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const res = await axios.get("http://localhost:5000/api/products");
+            const res = await axios.get("https://perfume-shop-server.vercel.app/api/products");
             console.log("data is ",res.data.data);
             setProducts(res.data.data);
             setLatestCollections(res.data.data.slice(8, 12));
