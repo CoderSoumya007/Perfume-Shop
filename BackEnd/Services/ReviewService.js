@@ -3,7 +3,7 @@ import Reviews from "../Models/Reviews.js"
 class ReviewService{
     async createReview(review){
         const { productId, reviews } = review;
-        console.log("Review: ",reviews[0]);
+        // console.log("Review: ",reviews[0]);
         
          // Validate that reviews array has the required fields
          if (!reviews || reviews.length === 0 || !productId) {
